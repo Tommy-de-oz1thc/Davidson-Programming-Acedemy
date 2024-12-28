@@ -1,0 +1,252 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%)); /* Gradient Background */
+  color: hsl(0, 6%, 24%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items at the top */
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column; /* Ensure columns by default */
+  width: 100%;
+  max-width: 1440px;
+  padding: 20px;
+  margin-bottom: 20px; /* Add some space at the bottom of the content */
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+
+.left {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 30px;
+  background: url('./images/bg-pattern-desktop.svg') no-repeat center;
+  background-size: cover;
+  padding: 50px;
+}
+
+.left h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: hsl(0, 6%, 24%);
+}
+
+.left p {
+  font-weight: 300;
+  color: hsl(0, 36%, 70%);
+  text-align:left;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centers horizontally */
+  justify-content: center;  /* Centers vertically */
+  text-align: center;  /* Optional, ensures text inside is also centered */
+  height: 100%;  /* Ensures it takes the full height of its parent */
+}
+
+/* Right Section */
+.right {
+  flex: 1;
+  background: url('./images/hero-desktop.jpg') no-repeat center;
+  background-size: cover;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Ensure it takes up full height of the container */
+  min-height: 800px; /* You can adjust this value */
+}
+
+
+.right p {
+  font-weight: 600;
+  font-size: 1rem;
+  color: hsl(0, 6%, 24%);
+  margin-bottom: 15px;
+  text-align: center;
+  
+}
+}
+/* Mobile Styling */
+@media (max-width: 375px) {
+  .left {
+    background-image: url('./images/bg-pattern-mobile.svg'); /* Image for mobile */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: auto; /* Let the section adjust height for content */
+    padding: 20px;
+  }
+
+   .right {
+    display: none; /* Hide the right section on mobile */
+  }
+
+  .left h1 {
+    font-size: 1.75rem; /* Adjust for mobile view */
+  }
+
+  .left p {
+    font-size: 1rem; /* Adjust for mobile view */
+  }
+}
+
+/* Container for input and button */
+.email-form {
+  position: relative; /* This will allow absolute positioning inside it */
+  width: 100%;
+  max-width: 400px; /* Set max-width for form */
+}
+
+/* Basic styling for email input form */
+.email-input {
+  padding: 12px;
+  width: 100%; /* Take full width of its container */
+  font-size: 1rem;
+  border: 1px solid hsl(0, 36%, 70%);
+  border-radius: 25px;
+  box-sizing: border-box; /* Include padding in the total width */
+}
+
+/* Button Styling */
+.submit-button {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  transform: translateY(-50%); /* Aligns the button vertically in the middle */
+  padding: 12px;
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px; /* Make button shorter */
+  height: 40px; /* Same height and width for a round button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 93%, 68%);
+}
+
+/* Button hover effect */
+.submit-button:hover {
+  background-color: hsl(0, 36%, 70%);
+}
+
+/* Styling for the placeholder */
+.email-input::placeholder {
+  color: hsl(0, 36%, 70%);
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  visibility: hidden; /* Hidden initially */
+}
+
+/* Valid email input styling */
+.email-input.valid {
+  border-color: green; /* Border color will turn green if email is valid */
+}
+
+.top-image.mobile-img {
+  display: none;
+}
+
+/* Show the mobile image only on screens smaller than 768px (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .top-image.desktop-img {
+    display: none; /* Hide desktop image */
+  }
+  
+  .top-image.mobile-img {
+    display: block; /* Show mobile image */
+	margin-top: 0 px;
+	margin-bottom: 50px;
+  }
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid hsl(0, 36%, 70%);
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: hsl(0, 36%, 70%);
+  font-weight: 300;
+}
+
+button {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: hsl(0, 93%, 68%);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px; /* Ensure a gap between button and the footer */
+}
+
+button:hover {
+  background-color: hsl(0, 36%, 70%);
+}
+
+/* Footer Styling */
+footer {
+  background-color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: 20px; /* Space above the footer */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  font-size: 11px;
+  color: hsl(0, 6%, 24%);
+}
+
+footer a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
