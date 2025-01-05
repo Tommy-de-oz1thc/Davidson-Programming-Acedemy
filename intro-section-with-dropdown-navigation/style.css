@@ -1,0 +1,193 @@
+/* Reset styling for consistency */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Layout */
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 18px;
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(0, 0%, 8%);
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between; /* Places logo and nav at opposite ends */
+    align-items: center; /* Align logo and menu vertically */
+    padding: 1rem 2rem; /* Add some spacing for aesthetics */
+}
+
+.logo {
+    height: auto; /* Ensure the logo maintains its aspect ratio */
+}
+
+/* Nav bar styles */
+nav {
+    flex-grow: 1; /* Ensures the menu takes up remaining space */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Align menu items to the right */
+    gap: 2rem;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list a {
+    color: hsl(0, 0%, 8%);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.nav-list a:hover {
+    background-color: hsl(0, 0%, 80%);
+    border-radius: 5px;
+}
+/* Add this to the CSS to toggle dropdown visibility */
+
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: hsl(0, 0%, 98%);
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.dropdown-menu li a {
+  padding: 0.5rem 1rem;
+  color: hsl(0, 0%, 8%);
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: hsl(0, 0%, 80%);
+}
+
+/* Show the menu if the show class is applied */
+.show {
+  display: block;
+}
+d-color: hsl(0, 0%, 80%);
+}
+
+/* Show dropdown menu on hover as backup */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+/* Container styling */
+.container {
+    display: flex;
+    height: 80vh;
+    background-color: white;
+    width: 80%;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 2rem;
+}
+
+.left h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: var(--almost-black);
+}
+
+.left p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--medium-gray);
+}
+
+.right {
+    flex: 1;
+    background-image: url("./images/image-hero-desktop.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .nav-list {
+        display: block;
+        text-align: center;
+    }
+
+    .nav-list li {
+        padding: 1rem;
+    }
+
+    .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+    }
+}
+/* Button Styles */
+.button {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* White text color */
+    background-color: #007BFF; /* Blue background color */
+    padding: 0.8rem 1.5rem; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Allow them to sit next to each other */
+    margin-right: 1rem; /* Space between the buttons */
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darken the background on hover */
+}
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between; /* Place content on both ends */
+    align-items: center; /* Center content vertically */
+    padding: 1rem 2rem; /* Padding to space elements out */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Header-right styling */
+.header-right {
+    margin-left: auto; /* Push buttons to the right */
+}
+
+.logo{
+	margin-right: 25px;
+}
