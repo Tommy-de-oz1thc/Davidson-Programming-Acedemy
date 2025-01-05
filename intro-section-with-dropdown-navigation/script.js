@@ -12,6 +12,7 @@ document.querySelectorAll('.dropdown-toggle').forEach(item => {
 // Select the login and register buttons by their IDs
 const loginButton = document.getElementById("loginButton");
 const registerButton = document.getElementById("registerButton");
+const readMoreButton = document.getElementById("readMoreButton");
 
 // Event listener for Login button
 loginButton.addEventListener("click", function (event) {
@@ -23,4 +24,10 @@ loginButton.addEventListener("click", function (event) {
 registerButton.addEventListener("click", function (event) {
   event.preventDefault();
   alert("Redirecting to Register page...(not yet made)");
+});
+
+// Event listener for Register button
+readMoreButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  alert("Redirecting to Read More page...(not yet made)");
 });

@@ -191,3 +191,18 @@ header {
 .logo{
 	margin-right: 25px;
 }
+
+.imagesclass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagesclass img {
+    margin-right: 10px; /* Adds space between images */
+}
+
+/* Optional: If you don't want the margin on the last image, you can remove it using: */
+.imagesclass img:last-child {
+    margin-right: 0;
+}
