@@ -23,6 +23,18 @@ header {
     padding: 1rem 2rem;
 }
 
+/* Show the mobile image only on screens smaller than 768px (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .top-image.desktop-img {
+    display: none; /* Hide desktop image */
+  }
+  
+  .top-image.mobile-img {
+    display: block; /* Show mobile image */
+	margin-top: 0 px;
+	margin-bottom: 50px;
+  }
+}
 .logo {
     height: auto;
     margin-right: 25px;
