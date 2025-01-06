@@ -24,12 +24,12 @@ header {
 }
 
 /* Show the mobile image only on screens smaller than 768px (e.g., mobile devices) */
-@media (max-width: 768px) {
-  .top-image.desktop-img {
+@media (min-width: 768px) {
+  .top-image .desktop-img {
     display: none; /* Hide desktop image */
   }
   
-  .top-image.mobile-img {
+  .top-image .mobile-img {
     display: block; /* Show mobile image */
 	margin-top: 0 px;
 	margin-bottom: 50px;
@@ -219,4 +219,19 @@ header {
     .right {
         display: none; /* Hide image on mobile for simplicity */
     }
+}
+.top-image.mobile-img {
+  display: none;
+}
+/* Show the mobile image only on screens smaller than 768px (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .top-image.desktop-img {
+    display: none; /* Hide desktop image */
+  }
+  
+  .top-image.mobile-img {
+    display: block; /* Show mobile image */
+	margin-top: 0 px;
+	margin-bottom: 50px;
+  }
 }
