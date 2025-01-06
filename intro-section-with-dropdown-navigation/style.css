@@ -1,5 +1,6 @@
-/* Reset styling for consistency */
+/* General Reset */
 * {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -11,198 +12,199 @@ body {
     background-color: hsl(0, 0%, 98%);
     color: hsl(0, 0%, 8%);
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Header styling */
+/* Header Styling */
 header {
     display: flex;
-    justify-content: space-between; /* Places logo and nav at opposite ends */
-    align-items: center; /* Align logo and menu vertically */
-    padding: 1rem 2rem; /* Add some spacing for aesthetics */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
 }
 
 .logo {
-    height: auto; /* Ensure the logo maintains its aspect ratio */
+    height: auto;
+    margin-right: 25px;
 }
 
-/* Nav bar styles */
-nav {
-    flex-grow: 1; /* Ensures the menu takes up remaining space */
+.desktop-nav {
+    flex-grow: 1;
+    display: flex;
 }
 
+/* Navigation */
 .nav-list {
     list-style: none;
     display: flex;
-    justify-content: flex-end; /* Align menu items to the right */
+    justify-content: flex-end;
     gap: 2rem;
 }
 
-.nav-list li {
-    position: relative;
-}
-
 .nav-list a {
-    color: hsl(0, 0%, 8%);
     text-decoration: none;
+    color: hsl(0, 0%, 8%);
     padding: 0.5rem 1rem;
-    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .nav-list a:hover {
     background-color: hsl(0, 0%, 80%);
-    border-radius: 5px;
 }
-/* Add this to the CSS to toggle dropdown visibility */
 
-
-/* Dropdown Menu */
 .dropdown {
     position: relative;
 }
 
-/* Dropdown styles */
 .dropdown-menu {
-  display: none; /* Hidden by default */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: hsl(0, 0%, 98%);
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-  border-radius: 5px;
-  width: 200px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: hsl(0, 0%, 98%);
+    list-style: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-menu li a {
-  padding: 0.5rem 1rem;
-  color: hsl(0, 0%, 8%);
-  display: block;
+    padding: 0.5rem 1rem;
+    display: block;
+    color: hsl(0, 0%, 8%);
 }
 
 .dropdown-menu li a:hover {
-  background-color: hsl(0, 0%, 80%);
+    background-color: hsl(0, 0%, 80%);
 }
 
-/* Show the menu if the show class is applied */
-.show {
-  display: block;
-}
-d-color: hsl(0, 0%, 80%);
-}
-
-/* Show dropdown menu on hover as backup */
+/* Dropdown Hover Behavior */
 .dropdown:hover .dropdown-menu {
-  display: block;
+    display: block;
 }
 
+/* Mobile Navigation */
+#mobile-nav-image {
+    display: none;
+    cursor: pointer;
+}
 
-/* Container styling */
+@media screen and (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    #mobile-nav-image {
+        display: block;
+        width: 30px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Hidden initially */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: hsl(0, 0%, 98%);
+        padding: 1rem 0;
+        gap: 1.5rem;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-list.show {
+        display: flex;
+    }
+}
+
+/* Container Styling */
 .container {
     display: flex;
-    height: 80vh;
+    height: auto;
     background-color: white;
-    width: 80%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center;
+    align-items: center;
 }
 
 .left {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    flex: 1;
     padding: 2rem;
+    flex: 1;
+    text-align: center;
 }
 
 .left h1 {
-    margin-bottom: 1rem;
     font-size: 2.5rem;
-    color: var(--almost-black);
+    margin-bottom: 1rem;
+    color: hsl(0, 0%, 8%);
 }
 
 .left p {
     font-size: 1.125rem;
     line-height: 1.8;
-    color: var(--medium-gray);
+    color: hsl(0, 0%, 50%);
 }
 
 .right {
     flex: 1;
-    background-image: url("./images/image-hero-desktop.PNG");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url("./images/image-hero-desktop.PNG") center / cover no-repeat;
+    height: 400px;
+    width: 100%;
+    max-width: 500px;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    .nav-list {
-        display: block;
-        text-align: center;
-    }
-
-    .nav-list li {
-        padding: 1rem;
-    }
-
-    .dropdown-menu {
-        display: none;
-    }
-
-    .dropdown-menu.show {
-        display: block;
-    }
-}
-/* Button Styles */
-.button {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* White text color */
-    background-color: #007BFF; /* Blue background color */
-    padding: 0.8rem 1.5rem; /* Add some padding */
-    border-radius: 5px; /* Rounded corners */
-    display: inline-block; /* Allow them to sit next to each other */
-    margin-right: 1rem; /* Space between the buttons */
-    font-size: 16px;
-}
-
-.button:hover {
-    background-color: #0056b3; /* Darken the background on hover */
-}
-/* Header styling */
-header {
-    display: flex;
-    justify-content: space-between; /* Place content on both ends */
-    align-items: center; /* Center content vertically */
-    padding: 1rem 2rem; /* Padding to space elements out */
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
-}
-
-
-
-/* Header-right styling */
-.header-right {
-    margin-left: auto; /* Push buttons to the right */
-}
-
-.logo{
-	margin-right: 25px;
-}
-
+/* Client Logos */
 .imagesclass {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .imagesclass img {
-    margin-right: 10px; /* Adds space between images */
+    width: 70px;
+    height: auto;
 }
 
-/* Optional: If you don't want the margin on the last image, you can remove it using: */
-.imagesclass img:last-child {
-    margin-right: 0;
+/* Buttons */
+.button {
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+    /* Simplify layout for smaller screens */
+    .left h1 {
+        font-size: 2rem;
+    }
+
+    .left p {
+        font-size: 1rem;
+    }
+
+    .right {
+        display: none; /* Hide image on mobile for simplicity */
+    }
 }

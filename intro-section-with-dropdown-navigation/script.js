@@ -31,3 +31,11 @@ readMoreButton.addEventListener("click", function (event) {
   event.preventDefault();
   alert("Redirecting to Read More page...(not yet made)");
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileNavImage = document.getElementById("mobile-nav-image");
+  const navList = document.querySelector(".nav-list");
+
+  mobileNavImage.addEventListener("click", () => {
+    navList.classList.toggle("show");
+  });
+});
