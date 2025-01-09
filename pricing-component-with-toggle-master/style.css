@@ -1,0 +1,298 @@
+/* Layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px; /* Body Copy */
+    font-weight: 700; /* Font Weight */
+    background-color: black; /* Body background set to black */
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Distribute content vertically */
+    align-items: center; /* Centers content horizontally */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Farver */
+:root {
+    /* Primærfarver */
+    --gradient-primary: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+
+    /* Neutrale farver */
+    --very-light-grayish-blue: hsl(240, 78%, 98%);
+    --light-grayish-blue: hsl(234, 14%, 74%);
+    --grayish-blue: hsl(233, 13%, 49%);
+    --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+/* Responsiv Layout */
+@media (max-width: 375px) {
+    body {
+        max-width: 100%; /* Adjust layout for mobile */
+    }
+}
+
+@media (min-width: 1440px) {
+    body {
+        margin: auto;
+        background-color: var(--light-grayish-blue); /* Optional: Change background for large screens */
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Background Images */
+.background {
+    width: 100%;
+    height: 100%;
+    background-image: url('images/bg-bottom.svg'), url('images/bg-top.svg');
+    background-position: left bottom, calc(100%) top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto, auto 70%;
+}
+
+/* Container Layout */
+.container {
+    max-width: 1440px;
+    margin: auto auto; /* Centers horizontally */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    height: 50vh; /* Vertical height for the container */
+    width: 60%; /* Set width */
+    background-color: white; /* Set container background to white */
+    padding: 20px; /* Optional: Add some padding to the container */
+}
+
+/* Footer Styling */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: auto; /* Push footer to the bottom of the container */
+    padding: 10px 0; /* Optional: Add padding for spacing */
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Styling for the switch toggle */
+.switch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px; /* Smaller width for the switch */
+    height: 30px; /* Smaller height for the switch */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:darkblue; /* #ccc;*/
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px; /* Reduced size for the switch handle */
+    width: 22px; /* Reduced size for the switch handle */
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color:darkblue; /* #4caf50;*/
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px); /* Moves the smaller switch handle when toggled */
+}
+
+.pricing-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 18px;
+    width: 100%; /* Ensure spacing between "Annually" and "Monthly" is across the width of container */
+    padding: 0 10px; /* Padding for better text separation from the switch */
+}
+
+.pricing-toggle span {
+    margin: 0 10px; /* Ensure there's consistent space around the text */
+}
+
+.price-options {
+    display: none;
+}
+
+.price-options.active {
+    display: block;
+}
+/* Flexbox to align the boxes horizontally */
+    .prislist {
+        display: flex; /* Flex layout to align items side by side */
+        justify-content: space-between; /* Equal spacing between items */
+        gap: 20px; /* Space between the pricing boxes */
+		width:70%;
+    }
+
+    .basic, .professional, .master {
+        background-color: #f0f0f0; /* Background color */
+        padding: 20px;
+        border-radius: 8px; /* Rounded corners */
+        width: 30%; /* Set box width to 30% */
+        text-align: center;
+        transition: background-color 0.3s ease; /* Smooth background color transition */
+    }
+/* Mobile Styles for stacking boxes vertically */
+@media (max-width: 768px) {
+    .prislist {
+        flex-direction: column; /* Stack pricing boxes vertically on smaller screens */
+        width: 100%; /* Full width on smaller screens */
+        gap: 15px; /* Reduced gap between the boxes */
+    }
+
+    .basic, .professional, .master {
+        width: 100%; /* Full width for pricing boxes on mobile */
+    }
+}
+/* Adjusting price styles */
+.price {
+    font-size: 1.2rem; /* Default font size */
+    color: hsl(233, 13%, 49%); /* Default dark blue color for the price */
+    margin-bottom: 10px; /* Add some spacing under the price */
+}
+
+/* Larger font for selected prices */
+.price-large {
+    font-size: 1.5rem; /* Larger font size for selected price */
+    color: hsl(228, 45%, 44%); /* Change color to blue for selected price */
+}
+
+/* Box hover effect */
+.basic:hover, .professional:hover, .master:hover {
+    background-color: hsl(228, 45%, 44%); /* Blue background color on hover */
+    color: white; /* Text color change to white */
+    transform: scale(1.05); /* Slightly grow the box (5%) */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Change price and link color to white when hovered */
+.basic:hover .price, .professional:hover .price, .master:hover .price {
+    color: white; /* Price color changes to white when box is hovered */
+}
+
+.basic:hover a, .professional:hover a, .master:hover a {
+    color: white; /* Link color changes to white when box is hovered */
+}
+/* Add padding to the link */
+.basic a, .professional a, .master a {
+    display: inline-block; /* Make the link behave like a block-level element so we can add padding */
+    padding-top: 10px; /* Adjust as needed */
+    padding-bottom: 10px; /* Adjust as needed */
+    text-decoration: none; /* Optional: removes underline from link */
+    color: hsl(228, 45%, 44%); /* Link color (default) */
+}
+
+/* Box hover effect - change link color to white on hover */
+.basic:hover a, .professional:hover a, .master:hover a {
+    color: white; /* Link color changes to white when box is hovered */
+}
+/* Responsiv Layout for baggrundsbilleder */
+@media (max-width: 768px) {
+    /* Fjerner baggrundsbillede på mobilen */
+    .background {
+        background-image: none;
+    }
+
+    /* Container justering for mobilen */
+    .container {
+        width: 70%; /* Sørg for at containeren tager mere plads på mobilen */
+        height: auto; /* Sørg for, at containeren ikke bliver afskåret på mobilen */
+        padding: 20px; /* Brug padding for at sikre, at der er lidt luft omkring indholdet */
+    }
+
+    /* Sørg for at switch-knappen er korrekt justeret */
+    .switch-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Sørg for, at det ikke er afskåret */
+        margin-top: 10px;
+    }
+
+    /* Lidt mindre størrelse på switch-knappen for mobilen */
+    .switch {
+        width: 60px; /* Lidt mindre switch */
+        height: 28px;
+    }
+
+    .slider:before {
+        height: 22px;
+        width: 22px;
+    }
+}
+/* Responsiv Layout for priskasserne på mobil */
+@media (max-width: 768px) {
+    .prislist {
+        flex-direction: column; /* Stak bokse vertikalt */
+        width: 100%; /* Fuldbredde på mobile skærme */
+        gap: 15px; /* Mindre mellemrum mellem boksene */
+    }
+
+    /* Reducer bredden på boksene for mobil */
+    .basic, .professional, .master {
+        width: 85%; /* Boksene skal tage fuld bredde på mobil */
+        padding: 15px; /* Mindre padding for at undgå for meget tom plads */
+    }
+
+    /* Reducer fontstørrelse for prisinformation på mobil */
+    .price {
+        font-size: 1rem; /* Lille fontstørrelse for pris på mobil */
+    }
+
+    /* Gør linktekst mere læselig på mobilen */
+    .basic a, .professional a, .master a {
+        font-size: 1rem; /* Juster fontstørrelsen på links for bedre læsbarhed */
+        padding-top: 8px; /* Lidt mindre padding på links */
+        padding-bottom: 8px;
+    }
+
+    /* Reduktion af prisens farve/størrelse for mindre skærme */
+    .price-large {
+        font-size: 1.3rem; /* Juster fontstørrelsen for den større pris på mobil */
+    }
+}
+
