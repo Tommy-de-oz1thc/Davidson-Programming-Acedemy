@@ -1,1 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+   <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div style="display:flex;">
+    <div>
+      <h1 class="white">Social Media Dashboard</h1>
+      <p class="white">Total Followers: 23,004</p>
+    </div>
+    <div class="dark-toggle">
+	
+  <div style="display:flex;">
+      <p style="text-align:right;" class="white">Dark Mode </p>
+      <label class="switch">
+        <input type="checkbox" id="dark-switch" onchange="toggleDarkMode()">
+        <span class="slider"></span>
+      </label>
+	  </div>
+    </div>
+  </div>
+<table class="desktop-table">
+  <tr>
+    <td>
+      <div class="bluebox box">
+        <p class="social"><img src="images/icon-facebook.svg"/> @nathanf</p>
+        <p class="large white">1987</p>
+        <p class="follow">Followers</p>
+        <p class="green">- 12 Today</p>
+      </div>
+    </td>
+    <td> 
+      <div class="bluebox box">
+        <p class="social"><img src="images/icon-twitter.svg"/> @nathanf</p>
+        <p class="large white">1044</p>
+        <p class="follow">Followers</p>
+        <p class="green">- 99 Today</p>
+      </div>
+    </td>
+    <td> 
+      <div class="yellowbox box">
+        <p class="social"><img src="images/icon-instagram.svg"/> @realnathanf</p>
+        <p class="large white">11k</p>
+        <p class="follow">Followers</p>
+        <p class="green">- 1099 Today</p>
+      </div>
+    </td>
+    <td> 
+      <div class="redbox box">
+        <p class="social"><img src="images/icon-instagram.svg"/> @Nafthan F.</p>
+        <p class="large white">8239</p>
+        <p class="follow">Subscribers</p>
+        <p class="red">- 1099 Today</p>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<table class="mobile-table">
+  <tr>
+    <td>
+      <div class="bluebox box">
+        <p class="social"><img src="images/icon-facebook.svg"/> @nathanf</p>
+        <p class="large white">1987</p>
+        <p class="follow">Followers</p>
+        <p class="green">- 12 Today</p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="bluebox box">
+        <p class="social"><img src="images/icon-twitter.svg"/> @nathanf</p>
+        <p class="large white">1044</p>
+        <p class="follow">Followers</p>
+        <p class="green">- 99 Today</p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="yellowbox box">
+        <p class="social"><img src="images/icon-instagram.svg"/> @realnathanf</p>
+        <p class="large white">11k</p>
+        <p class="follow">Followers</p>
+        <p class="green">- 1099 Today</p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="redbox box">
+        <p class="social"><img src="images/icon-instagram.svg"/> Nathan F.</p>
+        <p class="large white">8239</p>
+        <p class="follow">Subscribers</p>
+        <p class="red">- 144 Today</p>
+      </div>
+    </td>
+  </tr>
+</table>
+<h3>Overview - Today</h3>
+<!-- Desktop Table Layout -->
+<table class="desktop-table">
+  <tr>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Page Views</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-facebook.svg" alt="Facebook" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">87</p></td>
+            <td><p class="green">3%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Likes</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-facebook.svg" alt="Facebook" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">52</p></td>
+            <td><p class="red">2%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Likes</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-instagram.svg" alt="Instagram" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">5462</p></td>
+            <td><p class="green">2257%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Profile Views</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-instagram.svg" alt="Instagram" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">52k</p></td>
+            <td><p class="green">1375%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<!-- Mobile Table Layout -->
+<table class="mobile-table">
+  <tr>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Page Views</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-facebook.svg" alt="Facebook" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">87</p></td>
+            <td><p class="green">3%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Likes</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-facebook.svg" alt="Facebook" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">52</p></td>
+            <td><p class="red">2%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Likes</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-instagram.svg" alt="Instagram" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">5462</p></td>
+            <td><p class="green">2257%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Profile Views</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-instagram.svg" alt="Instagram" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">52k</p></td>
+            <td><p class="green">1375%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<!-- Desktop Table Layout -->
+<table class="desktop-table">
+  <tr>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Retweets</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-twitter.svg" alt="Facebook" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">117</p></td>
+            <td><p class="green">303%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Likes</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-twitter.svg" alt="Facebook" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">507</p></td>
+            <td><p class="red">553%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Likes</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-youtube.svg" alt="Instagram" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">107</p></td>
+            <td><p class="green">19%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Total Views</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-youtube.svg" alt="Instagram" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">1407</p></td>
+            <td><p class="green">12%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<!-- Mobile Table Layout -->
+<table class="mobile-table">
+  <tr>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Retweets</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-twitter.svg" alt="Facebook" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">117</p></td>
+            <td><p class="green">303%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Likes</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-twitter.svg" alt="Facebook" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">507</p></td>
+            <td><p class="red">553%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Likes</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-youtube.svg" alt="Instagram" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">107</p></td>
+            <td><p class="green">19%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="box">
+        <table width=100%>
+          <tr>
+            <td>
+              <p class="gray">Total Viewss</p>
+            </td>
+            <td class="icon-cell">
+              <p class="social"><img src="images/icon-youtube.svg" alt="Instagram" /></p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="small white">1407</p></td>
+            <td><p class="green">12%</p></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">'Tommy Clemmensen</a>.
+  </div>
+  <script src="script.js";></script>
+</body>
+</html>

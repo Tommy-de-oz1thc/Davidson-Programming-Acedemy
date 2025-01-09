@@ -1,0 +1,296 @@
+/* Layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px; /* Body Copy */
+    font-weight: 700; /* Font Weight */
+    background-color: black; /* Body background set to black */
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Distribute content vertically */
+    align-items: center; /* Centers content horizontally */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Farver */
+:root {
+    /* Primærfarver */
+    --gradient-primary: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+
+    /* Neutrale farver */
+    --very-light-grayish-blue: hsl(240, 78%, 98%);
+    --light-grayish-blue: hsl(234, 14%, 74%);
+    --grayish-blue: hsl(233, 13%, 49%);
+    --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+/* Responsiv Layout */
+@media (max-width: 375px) {
+    body {
+        max-width: 100%; /* Adjust layout for mobile */
+    }
+}
+
+@media (min-width: 1440px) {
+    body {
+        margin: auto;
+        background-color: var(--light-grayish-blue); /* Optional: Change background for large screens */
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+/* Container Layout */
+.container {
+    max-width: 1440px;
+    margin: auto auto; /* Centers horizontally */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+   /* justify-content: center; /* Centers content vertically */
+  /*  align-items: center; /* Centers content horizontally */
+    height: 100vh; /* Vertical height for the container */
+    width: 60%; /* Set width */
+    background-color: white; /* Set container background to white */
+    padding: 20px; /* Optional: Add some padding to the container */
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Set full width for mobile */
+        height: auto; /* Allow the container to grow with its content */
+        padding: 15px; /* Reduce padding on mobile for more space */
+    }
+}
+/* Footer Styling */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: auto; /* Push footer to the bottom of the container */
+    padding: 10px 0; /* Optional: Add padding for spacing */
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Styling for the switch toggle */
+.switch-container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px; /* Smaller width for the switch */
+    height: 30px; /* Smaller height for the switch */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+
+/* Flexbox Layout */
+div[style="display:flex;"] {
+    display: flex;
+    justify-content: space-between; /* Ensures items are on opposite sides */
+    align-items: center; /* Align vertically centered */
+    padding: 20px; /* Adds spacing around the container */
+}
+
+/* Left Section (h1 and p) */
+div > div:first-child h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+div > div:first-child p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: black;
+}
+
+/* Right Section (Dark Mode Toggle) */
+.dark-toggle {
+    display: flex;
+    align-items: center; /* Aligns the text and switch vertically */
+}
+
+.dark-toggle p {
+    margin: 0;
+    margin-right: 10px; /* Add space between text and toggle */
+    font-size: 16px;
+    text-align: right;
+}
+
+/* Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 10px;
+    right: 0;
+    bottom: 0;
+    background-color: #4caf50;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+ransition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px); /* Moves the smaller switch handle when toggled */
+}
+.box {
+    width: 70%; /* Set the width of the box */
+    padding: 20px; /* Add padding inside the box */
+    border: 1px solid lightgray; /* Optional: Border for the rest of the box */   
+    border-radius: 8px; /* Optional: Round the corners */
+    background-color: white; /* Background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better effect */
+    margin: 20px; /* Optional: Add margin around the box */
+    text-align: center; /* Center-align text */
+}
+
+.bluebox {
+border-top: 5px solid blue; /* Blue border at the top */
+}
+.yellowbox {
+border-top: 5px solid yellow; /* Yellow border at the top */
+}
+.redbox {
+border-top: 5px solid red; /* Red border at the top */
+}
+.social{
+	color: gray;
+	font-size: 14px;
+}
+.gray{
+	color:gray;
+}
+.large{
+	color:black;
+	font-size:34px;
+}
+.small{
+	color:black;
+	font-size:18px;
+}
+.follow{
+	color:gray;
+	font-size:22px;
+}
+.green{
+	color:green;
+	font-size:8px;
+}
+.red{
+	color:red;
+	font-size:8px;
+}
+/* Flexbox for the parent container to allow dynamic switching between horizontal and vertical */
+.top {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping in both directions */
+    justify-content: center; /* Centers the blue boxes horizontally */
+    gap: 20px; /* Adds space between the boxes */
+    width: 100%; /* Makes sure it takes up the full width */
+    margin-top: 20px;
+}
+
+/* For desktop devices (larger than 768px), arrange blue boxes horizontally */
+@media (min-width: 769px) {
+    .top {
+        flex-direction: row; /* Arrange items in a row (horizontal layout) */
+    }
+}
+
+/* For mobile devices (smaller than 768px), arrange blue boxes vertically */
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column; /* Stack blue boxes vertically */
+        align-items: center; /* Center align the boxes on mobile */
+    }
+}
+/* Desktop layout: show the .desktop-table and hide the .mobile-table */
+.desktop-table {
+  display: table;
+  width: 100%;
+  border-spacing: 5px;
+}
+
+.mobile-table {
+  display: none;
+}
+
+/* Mobile layout: show the .mobile-table and hide the .desktop-table */
+@media (max-width: 768px) {
+  .desktop-table {
+    display: none; /* Hide the desktop table on mobile */
+  }
+
+  .mobile-table {
+    display: table;
+    width: 100%;
+    border-spacing: 2px;
+  }
+
+  /* Optional: Make each .box take the full width on mobile */
+  .bluebox.box, .yellowbox.box, .redbox.box {
+    width: 70%;
+    margin: 10px 0;
+  }
+}
