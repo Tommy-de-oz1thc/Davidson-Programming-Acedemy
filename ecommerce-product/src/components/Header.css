@@ -1,0 +1,55 @@
+/* Desktop menu */
+.desktop-menu {
+    display: flex;
+    gap: 50px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Hide the desktop menu on mobile */
+  @media (max-width: 767px) {
+    .desktop-menu {
+      display: none; /* Hide desktop menu on small screens */
+    }
+  
+    .menu-icon {
+      display: flex; /* Show hamburger icon for mobile */
+      
+    }
+  
+    /* Style for mobile menu */
+    .mobile-menu {
+      display: none; /* Initially hide mobile menu */
+      flex-direction: column;
+      position: absolute;
+      top: 50px; 
+      right: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 20px;
+      list-style-type: none;
+      margin: 0;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .mobile-menu li {
+      padding: 10px 0;
+      text-align: center;
+    }
+  
+    /* Show mobile menu when it's toggled open */
+    .mobile-menu.open {
+      display: block;
+    }
+  
+    .mobile-menu a {
+      text-decoration: none;
+      color: #000; /* Change color of links */
+      font-size: 16px;
+    }
+  
+    .mobile-menu a:hover {
+      color: #007bff; /* Highlight on hover */
+    }
+  }
+  

@@ -1,0 +1,11 @@
+.hideMobile {
+    display: block; /* Default display for larger screens */
+  }
+  
+  @media (max-width: 767px) {
+    .hideMobile {
+      display: none; /* Hide on mobile devices */
+    }
+  }
+  
+  
